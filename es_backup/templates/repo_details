@@ -1,0 +1,11 @@
+Repository Details
+==================
+Name: {{ repo.name }}
+Type: {{ repo.type }}
+{% if repo.type == 'fs' -%}
+Location: {{ repo.location }}
+Compress: {{ repo.compress }}
+Chunk Size: {{ repo.chunk_size }}
+Max Restore Rate: {{ repo.restore_rate }}
+Max Snapshot Rate: {{ repo.snapshot_rate }}
+{% endif -%}

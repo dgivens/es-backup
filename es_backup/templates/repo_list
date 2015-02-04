@@ -1,0 +1,5 @@
+Repository List
+===============
+{% for repo in repos -%}
+{{ repo.name }}
+{% endfor -%}

@@ -1,2 +1,3 @@
 requests
-dateutil
+python-dateutil
+jinja2

@@ -1,0 +1,7 @@
+Snapshot List
+=============
+Repository: {{ repo.name }}
+
+{% for snap in snapshots -%}
+{{ snap.name }} - {{ snap.state }}
+{% endfor -%}

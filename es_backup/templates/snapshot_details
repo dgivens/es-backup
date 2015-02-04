@@ -1,0 +1,12 @@
+Snapshot Details
+================
+Name: {{ snapshot.name }}
+Indices: {{ snapshot.indices }}
+State: {{ snapshot.state }}
+Start Time: {{ snapshot.start_time }}
+End_Time: {{ snapshot.end_time }}
+Failures: {{ snapshot.failures }}
+Shards:
+  Total: {{ snapshot.shards.total }}
+  Failed: {{ snapshot.shards.failed }}
+  Successful: {{ snapshot.shards.successful }}
