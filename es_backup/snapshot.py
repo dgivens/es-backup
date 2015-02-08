@@ -33,8 +33,10 @@ class Snapshot(object):
                 self.indices = indices
             self.state = snapshot.get('state')
             self.start_time = parse(snapshot.get('start_time'))
-            self.end_time = parse(snapshot.get('end_time'))
-            self.duration = snapshot.get('duration_in_millis') / 1000.0
+            if snapshot.get('end_time'):
+                self.end_time = parse(snapshot.get('end_time'))
+            if snapshot.get('duration_in_millis'):
+                self.duration = snapshot.get('duration_in_millis') / 1000.0
             self.failures = snapshot.get('failures')
             self.shards = snapshot.get('shards')
             return True
