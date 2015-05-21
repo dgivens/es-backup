@@ -1,6 +1,7 @@
 import json
 import re
 import requests
+import shutil
 from es_backup.config import config
 from es_backup.snapshot import Snapshot
 
@@ -79,6 +80,12 @@ class FileRepository(Repository):
         }
         response = requests.put(self.url, data=json.dumps(repo_data))
         response.raise_for_status()
+
+    def delete(self):
+        response = requests.delete(self.url)
+        if response.status_code >= 400:
+            response.raise_for_status()
+        shutil.rmtree(self.location)
 
 
 class S3_Repository(Repository):
